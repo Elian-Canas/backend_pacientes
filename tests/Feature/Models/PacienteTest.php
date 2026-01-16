@@ -129,7 +129,7 @@ class PacienteTest extends TestCase
         ]);
 
         $response = $this->withHeader('Authorization', "Bearer {$this->token}")
-            ->getJson('/api/pacientes/buscar?q=Ana');
+            ->getJson('/api/pacientes?q=Ana');
 
         $response->assertStatus(200)
             ->assertJsonCount(1, 'data')
