@@ -52,7 +52,7 @@ class PacienteController extends Controller
         $query->orderBy('id', 'desc');
 
         // Paginación
-        $perPage = $request->input('limit', 15);
+        $perPage = $request->input('limit', 10);
         $pacientes = $query->paginate($perPage);
         return response()->json($pacientes);
     }
